@@ -1,0 +1,239 @@
+/* Mixin */
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* -------------------------------------------------------- Home ------------------------------------------ */
+.banner, .footer {
+  height: 200px;
+  background-color: $blue;
+}
+.profile-picture {
+  width: 250px;
+  height: $prof-pic-height;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 2;
+  margin: -($prof-pic-height/2) auto 30px;
+
+}
+
+.welcome-nav {
+  text-align: center;
+
+  .sub-nav {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 20px 0;
+
+    li {
+      display: inline-block;
+      vertical-align: middle;
+      letter-spacing: 1px;
+      padding: 0 15px 0 15px;
+
+      a {
+        text-decoration: none;
+        position: relative;
+        padding-bottom: 4px;
+        color: $blue;
+
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0%;
+          border-bottom: 2px solid $blue;
+          transition: 0.3s;
+        }
+        &.active:after,
+        &:hover:after {
+          width: 100%;
+        }
+      }
+    }
+
+  }
+}
+.welcome-section {
+  h2 {
+    text-align: center;
+    color: $grey;
+  }
+}
+/* -------------------------------------------------------- Resume ------------------------------------------ */
+.resume {
+  margin: 35px auto 100px auto;
+
+  .resume-entry {
+
+    .category {
+
+      h1 {
+        text-align: center;
+        font-weight: 400;
+        padding-bottom: 5px;
+
+        &:after {
+          content:'';
+          margin: auto;
+          width: 100%;
+          display: block;
+          border-bottom: 2px solid $blue;
+          padding-top: 8px;
+        }
+      }
+    }
+    .entry {
+      padding: 10px 0;
+      @include media('<=tablet') {
+        padding: 10px 5px;
+      }
+
+      .company {
+        padding: 0 20px;
+        display: table-cell;;
+        width: 35%;
+        text-align: center;
+        vertical-align: middle;
+
+        .company-title {
+          margin-bottom: 25px;
+
+          h3 {
+            font-weight: 600;
+          }
+          h5 {
+            font-style: italic;
+          }
+        }
+        .company-logo {
+          img {
+            height: 150px;
+            width: 150px;
+            @include media('<=tablet') {
+              height: 125px;
+              width: 125px;
+            }
+          }
+        }
+        .company-slogan {
+          margin: 15px auto 0 auto;
+          font-style: italic;
+          max-width: 160px;
+
+        }
+      }
+      .job {
+        padding: 0 20px;
+        display: table-cell;;
+        width: 64%;
+        text-align: center;
+        vertical-align: top;
+
+        .job-title {
+          margin-bottom: 25px;
+
+          h3 {
+            font-weight: 600;
+          }
+        }
+
+        .job-duties {
+          text-align: left;
+          padding: 0px 80px;
+          @include media('<=desktop') {
+            padding: 0px 40px;
+          }
+          @include media('<=tablet') {
+            padding: 0px 5px;
+          }
+
+          ul {
+            margin-bottom: 0px;
+            padding-left: 0px;
+
+            li {
+              padding-left: 10px;
+              padding-bottom: 15px;
+            }
+          }
+        }
+      }
+      .skill {
+        text-align: center;
+        margin: 20px 0;
+        h2 {
+          &:after {
+            content:'';
+            margin: auto;
+            width: 60%;
+            display: block;
+            border-bottom: 1px solid $blue;
+            padding-top: 5px;
+            @include media('<=phone') {
+              width: 90%;
+            }
+          }
+        }
+        .skill-list {
+          list-style: none;
+          padding: 0;
+          margin: 0 auto;
+          display: inline-block;
+          text-align: left;
+          li {
+            padding: 5px 0;
+            vertical-align: middle;
+          }
+          i {
+            font-size: 28px;
+            vertical-align: middle;
+            padding-right: 14px;
+          }
+          img {
+            height: 28px;
+            padding-right: 10px;
+          }
+          &.half-col {
+            padding: 0 70px;
+            columns: 2;
+            @include media('<=tablet') {
+              padding: 0px 5px;
+            }
+          }
+          &.full-col {
+            img {
+              height: 32px;
+            }
+          }
+        }
+      }
+    }
+    .add-b {
+      &:after {
+        content:'';
+        margin: auto;
+        width: 85%;
+        display: block;
+        border-bottom: 1px solid $blue;
+        padding-top: 10px;
+      }
+    }
+  }
+  #education {
+    .entry .job .job-duties {
+      //height: 205px;
+      ul {
+        //@include vertical-align();
+      }
+    }
+  }
+
+}

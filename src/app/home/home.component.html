@@ -1,0 +1,22 @@
+<div class="main-panel">
+  <div class="profile-picture" style="background-image: url('assets/images/me.png');">
+  </div>
+  <div class="welcome-nav">
+    <div class="container">
+      <h1>Michael Zadra</h1>
+      <h2>Software Engineer</h2>
+      <ul class="sub-nav">
+        <li><a [routerLinkActive]="['active']" [routerLink] = "['/blog']">Blog</a></li>
+        <li><a [routerLinkActive]="['active']" [routerLink] = "['/resume']">Résumé</a></li>
+        <li><a [routerLinkActive]="['active']" [routerLink] = "['/portfolio']">Portfolio</a></li>
+        <li><a [routerLinkActive]="['active']" [routerLink] = "['/music']">Music</a></li>
+      </ul>
+    </div>
+  </div>
+  <router-outlet>
+  </router-outlet>
+  <div class="welcome-section">
+    <div class="container">
+    </div>
+  </div>
+</div>
