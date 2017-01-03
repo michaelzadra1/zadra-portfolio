@@ -13,26 +13,37 @@ h6, .h6,
 
 h1, .h1 {
   font-size: $h1-font-size;
+  @include media('<tablet') {
+    font-size: $h1-font-size - 2px;
+  }
 }
 
 h2, .h2 {
   font-size: $h2-font-size;
+  @include media('<tablet') {
+    font-size: $h2-font-size - 2px;
+  }
 }
 
 h3, .h3 {
   font-size: $h3-font-size;
+  @include media('<tablet') {
+    font-size: $h3-font-size - 2px;
+  }
 }
 
 h4, .h4 {
   font-size: $h4-font-size;
+  @include media('<tablet') {
+    font-size: $h4-font-size - 2px;
+  }
 }
 
 h5, .h5 {
   font-size: $h5-font-size;
-}
-
-h6, .h6 {
-  font-size: $h6-font-size;
+  /*@include media('<tablet') {
+    font-size: $h5-font-size - 2px;
+  }*/
 }
 
 p, li {
